@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Product from "./Product";
 
-const Shop = () => {
-  const [products, setProducts] = useState([]);
+const Shop = (props) => {
+  const [products, setProducts] = useState(props.products);
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => {
-        setProducts(json);
-        console.log(json);
-      });
-  }, []);
+    setProducts(props.products);
+  }, [props]);
+
   const productsArr = products.map((product) => {
+    const newSource = {
+      pathname: `/shop/${product.id}`,
+      state: {
+        ...product,
+        // increment: props.incrementQuantityOfProduct,
+        // decrement: props.decrementQuantityOfProduct,
+        // quantityOfProduct: props.quantityOfProduct,
+      },
+    }; /* This object is added
+     to prevent fetching data for every product page render.*/
     return (
       <div key={product.id}>
-        <Link to={`/shop/${product.id}`}>
+        <Link to={newSource}>
           <img src={product.image} width="100" alt="product" />
           <p id="product-title">{product.title}</p>
           <p id="product-price">{product.price}$</p>
