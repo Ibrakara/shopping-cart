@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
+  const numberOfCartProducts = props.cartProducts.length;
   return (
     <nav>
       <img
@@ -17,7 +18,7 @@ const Header = () => {
           <li>Shop</li>
         </Link>
         <Link to="/cart">
-          <li>Cart + Counter</li>
+          <li>Cart {numberOfCartProducts}</li>
         </Link>
       </ul>
     </nav>

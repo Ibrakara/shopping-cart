@@ -1,27 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
+import ProductCard from "./ProductCard";
 
 const Product = (props) => {
+  const isFetched = props.isFetched;
   const productId = parseInt(props.match.params.id);
-  const product = props.products[productId - 1];
+  let product = props.products.find((product) => {
+    return product.id === productId;
+  });
+
   const incrementNumberOfCartProducts = props.incrementQuantityOfProduct;
   const decrementNumberOfCartProducts = props.decrementQuantityOfProduct;
-  const quantityOfProduct = product.quantity;
+  const addToCart = props.addToCart;
   console.log(props);
 
   return (
     <div>
-      <h1>{product.title}</h1>
-      <img src={`${product.image}`} width="100" alt="product" />
-      <h2>{product.price}$</h2>
-      <br />
-      <button onClick={() => incrementNumberOfCartProducts(productId)}>
-        Increment
-      </button>
-      <h2>{quantityOfProduct}</h2>
-      <button onClick={() => decrementNumberOfCartProducts(productId)}>
-        Decrement
-      </button>
-      <br />
+      {isFetched ? (
+        <ProductCard
+          product={product}
+          increment={incrementNumberOfCartProducts}
+          decrement={decrementNumberOfCartProducts}
+        />
+      ) : null}
+
+      {isFetched ? (
+        <button onClick={() => addToCart(productId, product.quantity)}>
+          Add to Cart
+        </button>
+      ) : null}
     </div>
   );
 };
