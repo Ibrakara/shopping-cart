@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Shop from "./components/Shop";
 import Product from "./components/Product";
 import Cart from "./components/Cart";
+import "./App.css";
 
 const App = () => {
   const [products, setProducts] = useState([]);

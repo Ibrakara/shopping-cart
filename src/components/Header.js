@@ -1,35 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./styles/Header.css";
 
 const Header = (props) => {
   const numberOfCartProducts = props.cartProducts.length;
   return (
-    <nav>
+    <nav className="header">
       <Link to="/">
         <img
-          src="https://image.flaticon.com/icons/png/512/79/79802.png"
+          id="logo"
+          src="https://seeklogo.com/images/O/online-shopping-logo-365B76F5DC-seeklogo.com.png"
           width="50"
           alt="logo"
         />
       </Link>
-      <ul>
-        <Link to="/">
+      <ul className="nav-links">
+        <Link className="nav-link" to="/">
           <li>Home</li>
         </Link>
-        <Link to="/shop">
+        <Link className="nav-link" to="/shop">
           <li>Shop</li>
         </Link>
-        <Link to="/cart">
-          <li>
-            <div>
-              <p>Cart</p>
-              {numberOfCartProducts}
-              <img
-                src="https://img.icons8.com/pastel-glyph/2x/fast-cart.png"
-                alt="cart"
-                width="40"
-              />
-            </div>{" "}
+        <Link className="nav-link" to="/cart">
+          <li id="cart-list-item">
+            <p>{numberOfCartProducts}</p>
+            <img
+              id="cart-img"
+              src="https://img.icons8.com/pastel-glyph/2x/fast-cart.png"
+              alt="cart"
+              width="40"
+            />
           </li>
         </Link>
       </ul>

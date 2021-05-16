@@ -1,0 +1,13 @@
+#home-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+#home-title {
+  font-size: 12vh;
+  height: 13vh;
+  background: -webkit-linear-gradient(45deg, #acd03c, #ee592f 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
