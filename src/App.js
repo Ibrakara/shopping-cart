@@ -58,8 +58,6 @@ const App = () => {
       const prd = [...products].find((product) => {
         return product.id === productId;
       });
-      console.log(prd === products[0]);
-      console.log("object is check", Object.is(prd, products[0]));
       const newPrd = {
         ...prd,
       }; /*Array.find method does not create a deep copy but shallow copy of and array element,
@@ -86,6 +84,25 @@ const App = () => {
       resetProductQuantities();
     }
   };
+  const removeFromCart = (productId) => {
+    const newCartProducts = cartProducts.filter((product) => {
+      if (product.id !== productId) {
+        return product;
+      }
+    });
+    setCartProducts(newCartProducts);
+  };
+  const resetCart = () => {
+    setCartProducts([]);
+  };
+  const checkOut = (totalPayment) => {
+    alert(
+      `Your total payment is ${totalPayment}$. Thanks to prefer us, wish you a nice day :D`
+    );
+    setTimeout(() => {
+      resetCart();
+    }, 500);
+  };
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -96,6 +113,9 @@ const App = () => {
         });
         setProducts(quantityAddedArray);
         setIsFetched(true);
+      })
+      .catch((err) => {
+        alert("An error occured, please refresh the page.");
       });
   }, []);
   return (
@@ -135,6 +155,8 @@ const App = () => {
                 isFetched={isFetched}
                 incrementQuantityOfCartProduct={incrementQuantityOfCartProduct}
                 decrementQuantityOfCartProduct={decrementQuantityOfCartProduct}
+                removeFromCart={removeFromCart}
+                checkOut={checkOut}
               />
             );
           }}

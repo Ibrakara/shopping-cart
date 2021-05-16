@@ -5,11 +5,13 @@ const Header = (props) => {
   const numberOfCartProducts = props.cartProducts.length;
   return (
     <nav>
-      <img
-        src="https://icons.iconarchive.com/icons/sinerjimedia/turkish-football-club/256/fenerbahce-sk-icon.png"
-        width="50"
-        alt="logo"
-      />
+      <Link to="/">
+        <img
+          src="https://image.flaticon.com/icons/png/512/79/79802.png"
+          width="50"
+          alt="logo"
+        />
+      </Link>
       <ul>
         <Link to="/">
           <li>Home</li>
@@ -18,7 +20,17 @@ const Header = (props) => {
           <li>Shop</li>
         </Link>
         <Link to="/cart">
-          <li>Cart {numberOfCartProducts}</li>
+          <li>
+            <div>
+              <p>Cart</p>
+              {numberOfCartProducts}
+              <img
+                src="https://img.icons8.com/pastel-glyph/2x/fast-cart.png"
+                alt="cart"
+                width="40"
+              />
+            </div>{" "}
+          </li>
         </Link>
       </ul>
     </nav>
