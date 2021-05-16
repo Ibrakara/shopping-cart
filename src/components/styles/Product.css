@@ -1,0 +1,18 @@
+.product-div {
+  height: 60vh;
+  margin-top: 5vmax;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 60vh;
+}
+.product-card-img {
+  height: 30vh;
+}

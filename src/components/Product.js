@@ -1,5 +1,6 @@
 import React from "react";
 import ProductCard from "./ProductCard";
+import "./styles/Product.css";
 
 const Product = (props) => {
   const isFetched = props.isFetched;
@@ -11,10 +12,9 @@ const Product = (props) => {
   const incrementNumberOfCartProducts = props.incrementQuantityOfProduct;
   const decrementNumberOfCartProducts = props.decrementQuantityOfProduct;
   const addToCart = props.addToCart;
-  console.log(props);
 
   return (
-    <div>
+    <div className="product-div">
       {isFetched ? (
         <ProductCard
           product={product}
@@ -24,9 +24,12 @@ const Product = (props) => {
       ) : null}
 
       {isFetched ? (
-        <button onClick={() => addToCart(productId, product.quantity)}>
-          Add to Cart
-        </button>
+        <div>
+          <button onClick={() => addToCart(productId, product.quantity)}>
+            Add to Cart
+          </button>
+          <p>{product.description}</p>
+        </div>
       ) : null}
     </div>
   );

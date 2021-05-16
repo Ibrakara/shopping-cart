@@ -1,3 +1,30 @@
 #shop-div {
   display: grid;
+  grid-auto-columns: auto;
+  grid-auto-rows: auto;
+  grid-template-columns: auto auto auto;
+  margin-top: 10vh;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  padding: 2vh 2vw;
+  justify-content: space-around;
+}
+.shop-product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  background-color: white;
+  width: 15vw;
+  height: 25vh;
+  color: black;
+  text-decoration: none;
+  list-style: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
+  border-radius: 0.5rem;
+}
+.product-title {
+  text-align: center;
 }
