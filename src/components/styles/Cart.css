@@ -31,3 +31,12 @@
 .cart-checkout-div > h2 {
   font-size: 4vmax;
 }
+.empty-cart {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80vh;
+}
+#cart-empty-msg {
+  font-size: 10vmax;
+}

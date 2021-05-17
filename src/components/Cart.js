@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ProductCard from "./ProductCard";
 import "./styles/Cart.css";
 
@@ -33,17 +33,19 @@ const Cart = (props) => {
       </div>
     );
   });
-  return (
+  return isCartEmpty ? (
+    <div className="empty-cart">
+      <h2 id="cart-empty-msg">Your cart is empty.</h2>
+    </div>
+  ) : (
     <div className="cart">
       <div className="cart-products">{newCartProducts}</div>
-      {isCartEmpty ? (
-        <h2>Your cart is empty.</h2>
-      ) : (
-        <div className="cart-checkout-div">
-          <h2>Total: {total}$</h2>
-          <button onClick={() => props.checkOut(total)}>Check Out</button>
-        </div>
-      )}
+      <div className="cart-checkout-div">
+        <h2>Total: {total}$</h2>
+        <button id="cart-checkout-button" onClick={() => props.checkOut(total)}>
+          Check Out
+        </button>
+      </div>
     </div>
   );
 };

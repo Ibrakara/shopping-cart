@@ -136,3 +136,6 @@ button {
   font-weight: 10;
   font-size: 2vmin;
 }
+button:hover {
+  cursor: pointer;
+}
