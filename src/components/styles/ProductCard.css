@@ -1,0 +1,32 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 50vh;
+  width: 30vw;
+}
+
+.product-card-img {
+  height: 20vh;
+}
+.product-card-price {
+  font-size: 5vmin;
+}
+.product-card-quantity-elements-div {
+  display: flex;
+  width: 10rem;
+  justify-content: space-evenly;
+}
+.product-card-quantity {
+  font-size: 5vmin;
+}
+.product-card-quantity-logo {
+  width: 2vmin;
+}
+.product-card-title {
+  width: 20vw;
+  height: 10vh;
+  overflow: hidden;
+  font-size: 3vmin;
+}

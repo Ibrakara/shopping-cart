@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
+import "./styles/Cart.css";
 
 const Cart = (props) => {
   const cartProducts = props.cartProducts;
@@ -11,7 +12,7 @@ const Cart = (props) => {
 
   const newCartProducts = cartProducts.map((cartProduct) => {
     return (
-      <div key={cartProduct.id}>
+      <div className="cart-product-container" key={cartProduct.id}>
         <ProductCard
           product={cartProduct}
           increment={props.incrementQuantityOfCartProduct}
@@ -23,6 +24,7 @@ const Cart = (props) => {
           }}
         >
           <img
+            className="cart-product-remove-img"
             width="20"
             src="https://icon-library.com/images/img_487212.png"
             alt="remove"
@@ -32,12 +34,12 @@ const Cart = (props) => {
     );
   });
   return (
-    <div>
-      {newCartProducts}
+    <div className="cart">
+      <div className="cart-products">{newCartProducts}</div>
       {isCartEmpty ? (
         <h2>Your cart is empty.</h2>
       ) : (
-        <div>
+        <div className="cart-checkout-div">
           <h2>Total: {total}$</h2>
           <button onClick={() => props.checkOut(total)}>Check Out</button>
         </div>

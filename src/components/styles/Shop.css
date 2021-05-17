@@ -27,4 +27,7 @@
 }
 .product-title {
   text-align: center;
+  font-size: 2vmin;
+  height: 8vh;
+  overflow: hidden;
 }

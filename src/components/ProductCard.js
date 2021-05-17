@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/ProductCard.css";
 
 const ProductCard = (props) => {
   const productId = parseInt(props.product.id);
@@ -9,7 +10,7 @@ const ProductCard = (props) => {
 
   return (
     <div className="product-card">
-      <h1>{product.title}</h1>
+      <h1 className="product-card-title">{product.title}</h1>
       <img
         className="product-card-img"
         src={`${product.image}`}
@@ -20,14 +21,16 @@ const ProductCard = (props) => {
       <div className="product-card-quantity-elements-div">
         <button onClick={() => decrement(productId)}>
           <img
+            className="product-card-quantity-logo"
             width="20"
             src="https://image.flaticon.com/icons/png/128/808/808534.png"
             alt="decrement"
           />
         </button>
-        <h2>{quantityOfProduct}</h2>
+        <h2 className="product-card-quantity">{quantityOfProduct}</h2>
         <button onClick={() => increment(productId)}>
           <img
+            className="product-card-quantity-logo"
             width="20"
             src="https://cdn0.iconfinder.com/data/icons/very-basic-2-android-l-lollipop-icon-pack/24/plus-512.png"
             alt="increment"

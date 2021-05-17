@@ -24,7 +24,7 @@ const Product = (props) => {
       ) : null}
 
       {isFetched ? (
-        <div>
+        <div className="product-desc-div">
           <button onClick={() => addToCart(productId, product.quantity)}>
             Add to Cart
           </button>

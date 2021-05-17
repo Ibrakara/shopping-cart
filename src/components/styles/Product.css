@@ -1,18 +1,24 @@
 .product-div {
-  height: 60vh;
-  margin-top: 5vmax;
+  height: 80vh;
+  margin-top: 8vmin;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
 }
-.product-card {
+.product-desc-div {
   display: flex;
   flex-direction: column;
+  width: 50vw;
   align-items: center;
-  justify-content: space-around;
-  height: 60vh;
+  justify-content: space-evenly;
+  margin-top: 1vmin;
+  height: fit-content;
 }
-.product-card-img {
-  height: 30vh;
+.product-desc-div > button {
+  margin-bottom: 1vmin;
+}
+.product-desc-div > p {
+  overflow: auto;
+  font-size: 2.6vmin;
 }
