@@ -1,1 +1,1 @@
-This is a mock shoppign web site using react-route-dom.
+This is a mock shopping web site using react-route-dom.
